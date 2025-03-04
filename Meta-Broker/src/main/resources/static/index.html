@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meta-Solver Exchange</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background-color: #1e2126;
+            color: #eaecef;
+        }
+        
+        .header {
+            background-color: #181a20;
+            padding: 12px 24px;
+            border-bottom: 1px solid #2b3139;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .trading-container {
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            gap: 1px;
+            background-color: #2b3139;
+            height: calc(100vh - 60px);
+        }
+
+        .order-book {
+            background-color: #1e2126;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .chart-section {
+            background-color: #1e2126;
+            padding: 20px;
+        }
+
+        .trades-section {
+            background-color: #1e2126;
+            padding: 20px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            font-size: 14px;
+        }
+
+        .buy { color: #0ecb81; }
+        .sell { color: #f6465d; }
+
+        .order-book-header {
+            display: flex;
+            justify-content: space-between;
+            color: #848e9c;
+            padding: 8px 0;
+            font-size: 12px;
+            border-bottom: 1px solid #2b3139;
+        }
+
+        .trade-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            font-size: 12px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            color: #eaecef;
+        }
+
+        .balance-section {
+            padding: 16px;
+            background-color: #2b3139;
+            margin-top: 16px;
+            border-radius: 4px;
+        }
+
+        .balance-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #363c4e;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>Meta-Solver Exchange</h2>
+        <div>ETH/USDC</div>
+    </div>
+
+    <div class="trading-container">
+        <div class="order-book">
+            <div class="section-title">Order Book</div>
+            <div class="order-book-header">
+                <span>Price (USDC)</span>
+                <span>Amount (ETH)</span>
+                <span>Total</span>
+            </div>
+            <div id="sellOrders"></div>
+            <div style="text-align: center; padding: 8px; font-size: 20px;" id="currentPrice">
+                5.530 USDC
+            </div>
+            <div id="buyOrders"></div>
+        </div>
+
+        <div class="chart-section">
+            <div class="section-title">Price Chart</div>
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div id="tradingview_chart"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script type="text/javascript">
+                new TradingView.widget({
+                    "width": "100%",
+                    "height": "500",
+                    "symbol": "BINANCE:ETHUSDT",
+                    "interval": "1",
+                    "timezone": "Etc/UTC",
+                    "theme": "dark",
+                    "style": "1",
+                    "locale": "en",
+                    "toolbar_bg": "#1e2126",
+                    "enable_publishing": false,
+                    "hide_side_toolbar": false,
+                    "allow_symbol_change": true,
+                    "container_id": "tradingview_chart",
+                    "studies": [
+                        "Volume@tv-basicstudies",
+                        "MASimple@tv-basicstudies"
+                    ],
+                    "disabled_features": [
+                        "use_localstorage_for_settings"
+                    ],
+                    "enabled_features": [
+                        "study_templates"
+                    ],
+                    "theme": "dark",
+                    "style": "1",
+                    "loading_screen": {
+                        "backgroundColor": "#1e2126"
+                    }
+                });
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+        </div>
+
+        <div class="trades-section">
+            <div class="section-title">Recent Trades</div>
+            <div id="trades"></div>
+            
+            <div class="balance-section">
+                <div class="section-title">Account Balances</div>
+                <div id="balances"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script>
+    const connectWebSocket = () => {
+        const socket = new SockJS('/ws');
+        const stompClient = Stomp.over(socket);
+        
+        // Disable STOMP debug logging
+        stompClient.debug = null;
+
+        const connectHeaders = {
+            'heart-beat': '10000,10000'
+        };
+
+        stompClient.connect(connectHeaders, 
+            // Success callback
+            function(frame) {
+                console.log('WebSocket Connected:', frame);
+                
+                stompClient.subscribe('/topic/orderbook', function(message) {
+                    try {
+                        console.log('Received message:', message);
+                        const state = JSON.parse(message.body);
+                        updateOrderBook(state);
+                        updateTrades(state.recentTrades);
+                        updateBalances(state.balances);
+                    } catch (error) {
+                        console.error('Error processing message:', error);
+                    }
+                }, 
+                {
+                    'ack': 'client'
+                });
+            },
+            // Error callback
+            function(error) {
+                console.error('WebSocket connection error:', error);
+                setTimeout(() => {
+                    console.log('Attempting to reconnect...');
+                    connectWebSocket();
+                }, 5000);
+            }
+        );
+
+        return stompClient;
+    };
+
+    let stompClient = connectWebSocket();
+
+    // Reconnect on window focus if disconnected
+    window.addEventListener('focus', function() {
+        if (!stompClient || !stompClient.connected) {
+            console.log('Reconnecting on window focus...');
+            stompClient = connectWebSocket();
+        }
+    });
+
+    // Handle window close
+    window.addEventListener('beforeunload', function() {
+        if (stompClient && stompClient.connected) {
+            stompClient.disconnect();
+        }
+    });
+
+    function updateOrderBook(state) {
+        // Sort sell orders from highest to lowest
+        const sellOrdersHtml = state.sellOrders
+            .sort((a, b) => b.price - a.price)
+            .map(order => `
+                <div class="price-row sell">
+                    <span>${order.price.toFixed(3)}</span>
+                    <span>${order.quantity.toFixed(4)}</span>
+                    <span>${(order.price * order.quantity).toFixed(2)}</span>
+                </div>
+            `)
+            .join('');
+        
+        // Sort buy orders from highest to lowest
+        const buyOrdersHtml = state.buyOrders
+            .sort((a, b) => b.price - a.price)
+            .map(order => `
+                <div class="price-row buy">
+                    <span>${order.price.toFixed(3)}</span>
+                    <span>${order.quantity.toFixed(4)}</span>
+                    <span>${(order.price * order.quantity).toFixed(2)}</span>
+                </div>
+            `)
+            .join('');
+        
+        document.getElementById('sellOrders').innerHTML = sellOrdersHtml;
+        document.getElementById('buyOrders').innerHTML = buyOrdersHtml;
+        
+        // Update current price from most recent trade
+        if (state.recentTrades && state.recentTrades.length > 0) {
+            const lastTrade = state.recentTrades[state.recentTrades.length - 1];
+            document.getElementById('currentPrice').innerHTML = 
+                `<span class="${lastTrade.buyType === 'BUY' ? 'buy' : 'sell'}">${lastTrade.price.toFixed(3)} USDC</span>`;
+        }
+    }
+
+    function updateTrades(trades) {
+        if (!trades || trades.length === 0) return;
+        
+        const tradesHtml = trades
+            .slice()
+            .reverse()
+            .slice(0, 50) // Show last 50 trades
+            .map(trade => `
+                <div class="trade-row ${trade.buyType === 'BUY' ? 'buy' : 'sell'}">
+                    <span>${trade.price.toFixed(3)}</span>
+                    <span>${trade.quantity.toFixed(4)}</span>
+                    <span>${new Date(trade.timestamp).toLocaleTimeString()}</span>
+                </div>
+            `)
+            .join('');
+        document.getElementById('trades').innerHTML = tradesHtml;
+    }
+
+    function updateBalances(balances) {
+        if (!balances) return;
+        
+        const balancesHtml = Object.entries(balances)
+            .map(([address, tokens]) => `
+                <div class="balance-row">
+                    <div>${address.substring(0, 8)}...</div>
+                    <div>
+                        <div>ETH: ${(tokens.ETH || 0).toFixed(4)}</div>
+                        <div>USDC: ${(tokens.USDC || 0).toFixed(2)}</div>
+                    </div>
+                </div>
+            `)
+            .join('');
+        document.getElementById('balances').innerHTML = balancesHtml;
+    }
+    </script>
+</body>
+</html> 

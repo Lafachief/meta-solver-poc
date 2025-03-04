@@ -1,0 +1,9 @@
+{
+  "rpcUrl": "http://localhost:8545",
+  "contractAddress": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+  "usdcAddress": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "user_a": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+  "user_b": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+  "privateKey_a": "0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d",
+  "privateKey_b": "0x5de4111afa1a4b94908f83103eb1f1706367c2e68ca870fc3fb9a804cdab365a"
+}

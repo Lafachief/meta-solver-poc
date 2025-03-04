@@ -1,0 +1,85 @@
+{"timestamp": "2025-02-11T18:56:49.048475", "type": "open", "data": "Connection opened"}
+{"timestamp": "2025-02-11T19:04:45.452327", "type": "close", "data": "1001 - "}
+{"timestamp": "2025-02-11T19:04:54.529467", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:04:54.533509", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:05:03.602816", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:05:03.606204", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:05:12.678732", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:05:12.680242", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:05:21.737154", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:05:21.739141", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:05:30.817319", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:05:30.819960", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:05:39.921068", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:05:39.922877", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:05:48.989867", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:05:48.992238", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:05:58.089065", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:05:58.090631", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:06:07.165852", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:06:07.167234", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:06:16.248326", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:06:16.250260", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:06:25.332072", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:06:25.337759", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:06:34.428731", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:06:34.430720", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:06:43.515526", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:06:43.517716", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:06:52.613531", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:06:52.615308", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:07:01.692070", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:07:01.694852", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:07:10.795074", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:07:10.797767", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:07:19.881642", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:07:19.883423", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:07:28.983836", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:07:28.985744", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:07:38.067677", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:07:38.070038", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:07:47.149974", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:07:47.152329", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:07:56.235431", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:07:56.236907", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:08:05.327140", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:08:05.329503", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:08:14.411900", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:08:14.414646", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:08:23.493760", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:08:23.495240", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:08:32.595849", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:08:32.598554", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:08:41.677511", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:08:41.678407", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:08:50.749545", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:08:50.751642", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:08:59.844638", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:08:59.845833", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:09:08.945280", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:09:08.946177", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:09:18.038155", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:09:18.040520", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:09:27.139996", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:09:27.141604", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:09:36.237563", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:09:36.238558", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:09:45.332732", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:09:45.335143", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:09:54.415670", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:09:54.416984", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:10:03.490800", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:10:03.491757", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:10:12.577933", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:10:12.579010", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:10:21.675686", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:10:21.676554", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:10:30.751628", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:10:30.752671", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:10:39.838482", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:10:39.839206", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:10:48.927094", "type": "error", "data": "[WinError 10061] No connection could be made because the target machine actively refused it"}
+{"timestamp": "2025-02-11T19:10:48.928195", "type": "close", "data": "None - None"}
+{"timestamp": "2025-02-11T19:10:57.558159", "type": "open", "data": "Connection opened"}
+{"timestamp": "2025-02-11T19:16:03.114111", "type": "close", "data": "1001 - "}
+{"timestamp": "2025-02-11T19:16:08.170630", "type": "open", "data": "Connection opened"}

@@ -1,0 +1,447 @@
+[
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "address",
+                           "name":  "_usdc",
+                           "type":  "address"
+                       }
+                   ],
+        "stateMutability":  "nonpayable",
+        "type":  "constructor"
+    },
+    {
+        "anonymous":  false,
+        "inputs":  [
+                       {
+                           "indexed":  true,
+                           "internalType":  "address",
+                           "name":  "user",
+                           "type":  "address"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "uint256",
+                           "name":  "amount",
+                           "type":  "uint256"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "bool",
+                           "name":  "isUSDC",
+                           "type":  "bool"
+                       }
+                   ],
+        "name":  "Deposit",
+        "type":  "event"
+    },
+    {
+        "anonymous":  false,
+        "inputs":  [
+                       {
+                           "indexed":  true,
+                           "internalType":  "address",
+                           "name":  "user",
+                           "type":  "address"
+                       },
+                       {
+                           "indexed":  true,
+                           "internalType":  "address",
+                           "name":  "metaBroker",
+                           "type":  "address"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "uint256",
+                           "name":  "amount",
+                           "type":  "uint256"
+                       }
+                   ],
+        "name":  "MarginAccountDeposit",
+        "type":  "event"
+    },
+    {
+        "anonymous":  false,
+        "inputs":  [
+                       {
+                           "indexed":  true,
+                           "internalType":  "address",
+                           "name":  "user",
+                           "type":  "address"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "uint256",
+                           "name":  "amount",
+                           "type":  "uint256"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "bool",
+                           "name":  "isUSDC",
+                           "type":  "bool"
+                       }
+                   ],
+        "name":  "MovedToMargin",
+        "type":  "event"
+    },
+    {
+        "anonymous":  false,
+        "inputs":  [
+                       {
+                           "indexed":  true,
+                           "internalType":  "address",
+                           "name":  "user",
+                           "type":  "address"
+                       }
+                   ],
+        "name":  "UserRegistered",
+        "type":  "event"
+    },
+    {
+        "anonymous":  false,
+        "inputs":  [
+                       {
+                           "indexed":  true,
+                           "internalType":  "address",
+                           "name":  "user",
+                           "type":  "address"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "uint256",
+                           "name":  "amount",
+                           "type":  "uint256"
+                       }
+                   ],
+        "name":  "Withdrawal",
+        "type":  "event"
+    },
+    {
+        "inputs":  [
+
+                   ],
+        "name":  "deposit",
+        "outputs":  [
+
+                    ],
+        "stateMutability":  "payable",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "uint256",
+                           "name":  "amount",
+                           "type":  "uint256"
+                       }
+                   ],
+        "name":  "depositUSDC",
+        "outputs":  [
+
+                    ],
+        "stateMutability":  "nonpayable",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+
+                   ],
+        "name":  "getBalance",
+        "outputs":  [
+                        {
+                            "internalType":  "uint256",
+                            "name":  "",
+                            "type":  "uint256"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "address",
+                           "name":  "userAddress",
+                           "type":  "address"
+                       }
+                   ],
+        "name":  "getBalances",
+        "outputs":  [
+                        {
+                            "internalType":  "uint256",
+                            "name":  "ethBalance",
+                            "type":  "uint256"
+                        },
+                        {
+                            "internalType":  "uint256",
+                            "name":  "ethMarginBalance",
+                            "type":  "uint256"
+                        },
+                        {
+                            "internalType":  "uint256",
+                            "name":  "usdcBalance",
+                            "type":  "uint256"
+                        },
+                        {
+                            "internalType":  "uint256",
+                            "name":  "usdcMarginBalance",
+                            "type":  "uint256"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+
+                   ],
+        "name":  "getContractBalance",
+        "outputs":  [
+                        {
+                            "internalType":  "uint256",
+                            "name":  "",
+                            "type":  "uint256"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "address",
+                           "name":  "",
+                           "type":  "address"
+                       }
+                   ],
+        "name":  "marginAccounts",
+        "outputs":  [
+                        {
+                            "internalType":  "uint256",
+                            "name":  "",
+                            "type":  "uint256"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "bytes",
+                           "name":  "proof",
+                           "type":  "bytes"
+                       },
+                       {
+                           "internalType":  "uint256[]",
+                           "name":  "publicInputs",
+                           "type":  "uint256[]"
+                       },
+                       {
+                           "internalType":  "address",
+                           "name":  "user",
+                           "type":  "address"
+                       },
+                       {
+                           "internalType":  "uint256",
+                           "name":  "newBalance",
+                           "type":  "uint256"
+                       }
+                   ],
+        "name":  "modifyBalanceWithProof",
+        "outputs":  [
+
+                    ],
+        "stateMutability":  "nonpayable",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "uint256",
+                           "name":  "amount",
+                           "type":  "uint256"
+                       }
+                   ],
+        "name":  "moveToMargin",
+        "outputs":  [
+
+                    ],
+        "stateMutability":  "nonpayable",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "uint256",
+                           "name":  "amount",
+                           "type":  "uint256"
+                       }
+                   ],
+        "name":  "moveUSDCToMargin",
+        "outputs":  [
+
+                    ],
+        "stateMutability":  "nonpayable",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+
+                   ],
+        "name":  "owner",
+        "outputs":  [
+                        {
+                            "internalType":  "address",
+                            "name":  "",
+                            "type":  "address"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "address",
+                           "name":  "_verifier",
+                           "type":  "address"
+                       }
+                   ],
+        "name":  "setZKVerifier",
+        "outputs":  [
+
+                    ],
+        "stateMutability":  "nonpayable",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+
+                   ],
+        "name":  "usdc",
+        "outputs":  [
+                        {
+                            "internalType":  "contract IERC20",
+                            "name":  "",
+                            "type":  "address"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "address",
+                           "name":  "",
+                           "type":  "address"
+                       }
+                   ],
+        "name":  "userMetaBroker",
+        "outputs":  [
+                        {
+                            "internalType":  "address",
+                            "name":  "",
+                            "type":  "address"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "address",
+                           "name":  "",
+                           "type":  "address"
+                       }
+                   ],
+        "name":  "users",
+        "outputs":  [
+                        {
+                            "internalType":  "uint256",
+                            "name":  "ethBalance",
+                            "type":  "uint256"
+                        },
+                        {
+                            "internalType":  "uint256",
+                            "name":  "ethMarginBalance",
+                            "type":  "uint256"
+                        },
+                        {
+                            "internalType":  "uint256",
+                            "name":  "usdcBalance",
+                            "type":  "uint256"
+                        },
+                        {
+                            "internalType":  "uint256",
+                            "name":  "usdcMarginBalance",
+                            "type":  "uint256"
+                        },
+                        {
+                            "internalType":  "bool",
+                            "name":  "isRegistered",
+                            "type":  "bool"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "uint256",
+                           "name":  "amount",
+                           "type":  "uint256"
+                       }
+                   ],
+        "name":  "withdraw",
+        "outputs":  [
+
+                    ],
+        "stateMutability":  "nonpayable",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "uint256",
+                           "name":  "amount",
+                           "type":  "uint256"
+                       },
+                       {
+                           "internalType":  "bytes",
+                           "name":  "zkProof",
+                           "type":  "bytes"
+                       },
+                       {
+                           "internalType":  "bytes",
+                           "name":  "signature",
+                           "type":  "bytes"
+                       }
+                   ],
+        "name":  "withdrawFromMarginAccount",
+        "outputs":  [
+
+                    ],
+        "stateMutability":  "nonpayable",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+
+                   ],
+        "name":  "zkVerifier",
+        "outputs":  [
+                        {
+                            "internalType":  "contract IZKVerifier",
+                            "name":  "",
+                            "type":  "address"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function"
+    }
+]

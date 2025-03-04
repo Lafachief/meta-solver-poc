@@ -1,0 +1,15 @@
+{"timestamp": "2025-02-13T21:35:29.998902", "type": "open", "data": "Connection opened"}
+{"timestamp": "2025-02-13T22:07:06.178785", "type": "open", "data": "Connection opened"}
+{"timestamp": "2025-02-13T22:13:44.622728", "type": "close", "data": "4500 - Failed to send message within the configured send limit"}
+{"timestamp": "2025-02-13T22:13:49.632712", "type": "open", "data": "Connection opened"}
+{"timestamp": "2025-02-13T22:15:09.145083", "type": "open", "data": "Connection opened"}
+{"timestamp": "2025-02-13T22:17:30.078199", "type": "close", "data": "4500 - Failed to send message within the configured send limit"}
+{"timestamp": "2025-02-13T22:17:35.086642", "type": "open", "data": "Connection opened"}
+{"timestamp": "2025-02-13T22:23:51.968398", "type": "close", "data": "1001 - "}
+{"timestamp": "2025-02-13T22:24:00.601691", "type": "open", "data": "Connection opened"}
+{"timestamp": "2025-02-13T22:27:33.561741", "type": "close", "data": "4500 - Failed to send message within the configured send limit"}
+{"timestamp": "2025-02-13T22:27:38.567835", "type": "open", "data": "Connection opened"}
+{"timestamp": "2025-02-13T22:28:53.079479", "type": "close", "data": "4500 - Failed to send message within the configured send limit"}
+{"timestamp": "2025-02-13T22:28:58.090900", "type": "open", "data": "Connection opened"}
+{"timestamp": "2025-02-13T22:54:55.689032", "type": "error", "data": "[WinError 10054] An existing connection was forcibly closed by the remote host"}
+{"timestamp": "2025-02-13T22:54:55.690576", "type": "close", "data": "None - None"}

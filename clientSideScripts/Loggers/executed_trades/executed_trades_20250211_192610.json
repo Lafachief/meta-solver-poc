@@ -1,0 +1,59 @@
+{
+  "timestamp": "2025-02-11T19:26:10.723572",
+  "trades": [
+    {
+      "buyer": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "seller": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "quantity": 0.003993245084156438,
+      "price": 2622.6093896957786,
+      "timestamp": "2025-02-11T19:26:06.0269533",
+      "buyType": "LIMIT",
+      "sellType": "LIMIT"
+    },
+    {
+      "buyer": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "seller": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "quantity": 0.10668289391521087,
+      "price": 2624.0341322756276,
+      "timestamp": "2025-02-11T19:26:07.030868",
+      "buyType": "LIMIT",
+      "sellType": "LIMIT"
+    },
+    {
+      "buyer": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "seller": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "quantity": 0.6030288956896026,
+      "price": 2624.0341322756276,
+      "timestamp": "2025-02-11T19:26:08.0347203",
+      "buyType": "LIMIT",
+      "sellType": "LIMIT"
+    },
+    {
+      "buyer": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "seller": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "quantity": 0.05333331727465562,
+      "price": 2624.0341322756276,
+      "timestamp": "2025-02-11T19:26:09.0390891",
+      "buyType": "LIMIT",
+      "sellType": "LIMIT"
+    },
+    {
+      "buyer": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "seller": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "quantity": 0.09354800162365681,
+      "price": 2614.198876786913,
+      "timestamp": "2025-02-11T19:26:09.0390891",
+      "buyType": "LIMIT",
+      "sellType": "LIMIT"
+    },
+    {
+      "buyer": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "seller": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "quantity": 0.5942471455125243,
+      "price": 2614.1102022735336,
+      "timestamp": "2025-02-11T19:26:09.0390891",
+      "buyType": "LIMIT",
+      "sellType": "LIMIT"
+    }
+  ]
+}
